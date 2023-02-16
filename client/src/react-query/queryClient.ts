@@ -17,12 +17,12 @@ function queryErrorHandler(error: unknown): void {
 export function generateQueryClient(): QueryClient {
   return new QueryClient({
     // from https://tanstack.com/query/v4/docs/guides/testing#turn-off-network-error-logging
-    // logger: {
-    //   log: console.log,
-    //   warn: console.warn,
-    //   // ✅ no more errors on the console for tests
-    //   error: process.env.NODE_ENV === 'test' ? () => {} : console.error,
-    // },
+    logger: {
+      log: console.log,
+      warn: console.warn,
+      // ✅ no more errors on the console for tests
+      error: process.env.NODE_ENV === 'test' ? () => {} : console.error,
+    },
     defaultOptions: {
       queries: {
         onError: queryErrorHandler,
