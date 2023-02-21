@@ -30,12 +30,15 @@ declare global {
 const app = express();
 
 // CORS for react app, assuming port 3000
-app.use(
-  cors({
-    origin: 'http://localhost:3000',
-    credentials: true,
-  })
-);
+// const corsOptions = {
+//   origin: 'http://127.0.0.1:3000',
+//   credentials: true,
+//   allowedHeaders: ['sessionId', 'Content-Type'],
+//   exposedHeaders: ['sessionId'],
+//   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+//   preflightContinue: false,
+// };
+app.use(cors());
 
 /* ********* middlewares ********* */
 // use middleware to serve static images

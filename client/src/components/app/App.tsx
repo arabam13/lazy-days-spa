@@ -8,7 +8,6 @@ import { theme } from '../../theme';
 import { Loading } from './Loading';
 import { Navbar } from './Navbar';
 import { Routes } from './Routes';
-import { createStandaloneToast } from '@chakra-ui/toast';
 
 export function App(): ReactElement {
   return (
